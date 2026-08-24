@@ -3,7 +3,7 @@
 // bara vissa domäner ("authorized origins" / referrers) får använda dem.
 
 export const GOOGLE_CLIENT_ID = '760720412767-s0q1afotebo8k42eaf07i06lbrk9175s.apps.googleusercontent.com';
-export const GOOGLE_PICKER_API_KEY = 'AlzaSyC{ZzwTc8os2ryc8HC_617_tAwmLQ-ItIw';
+export const GOOGLE_PICKER_API_KEY = 'AIzaSyCfZZwTc8os2ryc8HC_6T7_tAwmLQ-Itiw';
 
 // Drive-scope: fullständig åtkomst, så att mappväljaren kan visa och välja
 // bland alla dina befintliga mappar. Om du senare vill snäva åt behörigheten
