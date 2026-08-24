@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Transkribera</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>Transkribera</h1>
+      <button id="signin-btn" class="link-btn" hidden>Logga in med Google</button>
+      <span id="account-badge" class="account-badge" hidden></span>
+    </header>
+
+    <main>
+      <!-- IDLE / RECORDING -->
+      <section id="screen-record" class="screen card">
+        <p class="eyebrow">Ny inspelning</p>
+        <button id="record-btn" class="mic-btn" aria-label="Spela in">
+          <span class="mic-dot"></span>
+        </button>
+        <p id="record-status" class="record-status">Tryck för att spela in</p>
+        <p id="record-timer" class="record-timer mono" hidden>00:00</p>
+      </section>
+
+      <!-- PROCESSING -->
+      <section id="screen-processing" class="screen card" hidden>
+        <div class="spinner"></div>
+        <p>Transkriberar…</p>
+      </section>
+
+      <!-- RESULT -->
+      <section id="screen-result" class="screen card" hidden>
+        <label class="field-label" for="filename-input">Filnamn</label>
+        <div class="filename-row">
+          <input id="filename-input" type="text" class="filename-input" />
+          <span class="mono ext">.txt</span>
+        </div>
+
+        <label class="field-label" for="text-output">Transkribering</label>
+        <textarea id="text-output" class="text-output" rows="10"></textarea>
+
+        <div class="destination-row">
+          <button id="pick-folder-btn" class="secondary-btn">Välj mapp i Drive</button>
+          <span id="folder-name" class="folder-name mono"></span>
+        </div>
+
+        <div class="actions-row">
+          <button id="discard-btn" class="text-btn">Kasta</button>
+          <button id="save-btn" class="primary-btn" disabled>Spara i Drive</button>
+        </div>
+        <p id="result-error" class="error-text" hidden></p>
+      </section>
+
+      <!-- SAVED -->
+      <section id="screen-saved" class="screen card" hidden>
+        <p class="saved-check">✓</p>
+        <p id="saved-message">Sparad.</p>
+        <a id="saved-link" href="#" target="_blank" rel="noopener" class="link-btn" hidden>Öppna i Drive</a>
+        <button id="record-again-btn" class="primary-btn">Spela in nytt</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
